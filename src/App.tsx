@@ -4,11 +4,14 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
-// import Projects from './components/Projects';
+import ProjectsSection from './components/ProjectsSection';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import { useProjects } from './hooks/useProjects';
 
 function App() {
+  const projects = useProjects();
+
   return (
     <div className="min-h-screen bg-slate-900">
       {/* <Header /> */}
@@ -17,7 +20,7 @@ function App() {
         <About />
         <Experience />
         <Skills />
-        {/* <Projects /> */}
+        <ProjectsSection projects={projects} />
         <Contact />
       </main>
       <Footer />
